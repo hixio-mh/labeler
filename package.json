@@ -7,7 +7,9 @@
     "build": "tsc && ncc build lib/main.js",
     "format": "prettier --write **/*.ts",
     "format-check": "prettier --check **/*.ts",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -22,23 +24,25 @@
   "author": "GitHub",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^2.2.0",
     "js-yaml": "^3.13.1",
     "minimatch": "^3.0.4",
-    "semver": "^6.1.1"
+    "semver": "^6.1.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.13",
+    "@types/jest": "^25.1.0",
     "@types/node": "^12.0.4",
     "@types/semver": "^6.0.0",
     "@types/minimatch": "^3.0.0",
     "@types/js-yaml": "^3.12.1",
     "@zeit/ncc": "^0.21.1",
-    "jest": "^24.8.0",
-    "jest-circus": "^24.7.1",
+    "jest": "^26.0.0",
+    "jest-circus": "^25.0.0",
     "prettier": "^1.17.1",
-    "ts-jest": "^24.0.2",
+    "ts-jest": "^25.3.0",
     "typescript": "^3.5.1"
-  }
+  },
+  "snyk": true
 }
